@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <script src="node_modules/angular/angular.min.js"></script>
+  <!-- <link rel="stylesheet"  href="node_modules/angular-material/angular-material.min.css"></link> -->
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"></link>
+
+  <link rel="stylesheet/less" type="text/css" href="style.less"></link>
+  <link rel="stylesheet/less" type="text/css" href="components/header/header.less"></link>
+
+</head>
+
+<body>
+  <div id="app" data-ng-app="app">
+    <grocery-list-header></grocery-list-header>
+    <div class="container">
+        <div ng-view></div>
+    </div>
+    <!-- <grocery-list-footer></grocery-list-footer> -->
+  </div>
+  <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="/node_modules/less/dist/less.min.js"></script>
+  <script src="angular-routes.min.js"></script>
+  <script src="app.js"></script>
+  <script src="app.routing.js"></script>
+  <script src="components/header/header.js"></script>
+  <script src="components/footer/footer.js"></script>
+  <script src="components/items-needed/items-needed.js"></script>
+  <script src="components/items-purchased/items-purchased.js"></script>
+</body>
+
+</html>
