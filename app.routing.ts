@@ -1,14 +1,19 @@
-import app from './app';
+module GroceryListApp {
 
-app.config(function($routeProvider) {
-    $routeProvider
-    .when("/", {
-        templateUrl : 'components/items-needed/items-needed.html'
-    })
-    .when("/items-purchased", {
-        templateUrl : "components/items-purchased/items-purchased.html"
-    })
-    .when("/items-needed", {
-        templateUrl : "components/items-needed/items-needed.html"
+    app.config(function($routeProvider) {
+        $routeProvider
+        .when("/", {
+            template : '<items-needed></items-needed>'
+        })
+        .when("/items-purchased", {
+            template : "<items-purchased></items-purchased>"
+        })
+        .when("/items-needed", {
+            template : "<items-needed></items-needed>"
+        })    
+        .otherwise({
+            template : "<h1>404 Page Not Found</h1>"
+        });;
     });
-});
+
+}
