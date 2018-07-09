@@ -1,15 +1,16 @@
-import app from '../../app';
+module GroceryListApp {
 
-app.component("items-purchased", {
-    template: `
-      <ul>
-        <li ng-repeat="item in $ctrlItemsPurchased.itemsPurchased">{{ item.name }}</li>
-      </ul>
-    `,
-    controller: function() {
-      this.itemsPurchased = [
-        { id: 11, name: 'Mr. Nice' },
-      ];
-    },
-    controllerAs: "$ctrlItemsPurchased"
+  app.component("itemsPurchased", {
+    templateUrl: "components/items-purchased/items-purchased.component.html",
+    controller: function (groceryItemsService) {
+        var ctrl = this;
+        ctrl.itemsPurchased = [];
+        ctrl.$onInit = function () {
+            ctrl.itemsPurchased = groceryItemsService.items.purchasedItems;
+        };
+        ctrl.removePurchasedItem = function (index) {
+            groceryItemsService.removePurchasedItem(index);
+        };
+    }
   });
+}

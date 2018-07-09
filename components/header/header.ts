@@ -1,9 +1,9 @@
-import app from '../../app';
 
- app.component("gl-header", {
-    templateUrl: 'header.component.html',
+module GroceryListApp {
+  app.component("groceryListHeader", {
+    templateUrl: '/components/header/header.component.html',
     controller: function() {
-
-    },
-    controllerAs: "$ctrlGLHeader"
+  
+    }
   });
+}

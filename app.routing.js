@@ -1,5 +1,4 @@
 app.config(function($routeProvider) {
-    //$locationProvider.hashPrefix('');
     $routeProvider
     .when("/", {
         template : '<items-needed></items-needed>'

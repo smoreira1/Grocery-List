@@ -22,3 +22,11 @@ An Item count on both views
 3. Install http-server (https://www.npmjs.com/package/http-server)  npm install http-server -g
 4. Open a terminal & Run command "http-server" at root of project.
 5. Read terminal and open browser in suggested uri location.
+
+
+
+# Potential Future Work
+1. Add Validation to Needed Items.
+2. Ability to filter items to move to purchase view.
+3. Move Modals/Dialogs to their own components generic component.
+

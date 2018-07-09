@@ -1,12 +1,16 @@
-app.component("itemsPurchased", {
-    templateUrl: "components/items-purchased/items-purchased.component.html",
-    controller: function () {
-        this.itemsPurchased = [
-            { id: 11, name: 'Mr. Nice' },
-        ];
-
-        let removePurchasedItem = function(){
+var GroceryListApp;
+(function (GroceryListApp) {
+    app.component("itemsPurchased", {
+        templateUrl: "components/items-purchased/items-purchased.component.html",
+        controller: function (groceryItemsService) {
+            var ctrl = this;
+            ctrl.itemsPurchased = [];
+            ctrl.$onInit = function () {
+                ctrl.itemsPurchased = groceryItemsService.items.purchasedItems;
+            };
+            ctrl.removePurchasedItem = function (index) {
+                groceryItemsService.removePurchasedItem(index);
+            };
         }
-    },
-    controllerAs: "$ctrlItemsPurchased"
-});
+    });
+})(GroceryListApp || (GroceryListApp = {}));
